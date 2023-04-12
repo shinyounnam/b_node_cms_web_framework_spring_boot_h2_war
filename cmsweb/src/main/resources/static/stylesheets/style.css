@@ -1,0 +1,86 @@
+/* 마진과 패딩의 초기화 */
+a, abbr, acronym, address, b, blockquote, big, body, center, caption, cite, code, command, dd, del, dfn, dl, div, dt, em, embed, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html,
+i, iframe, img, label, legend, li, object, ol, p, pre, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, u, ul, var { margin:0; padding:0}
+
+/* 헤더 폰트 사이즈 초기화 */
+h1,h2,h3,h4,h5,h6 {font-size:100% }
+
+/* 리스트의 스타일 제거 */
+ol, ul {list-style:none}
+
+/* 폰트 강조 특성 초기화 */
+address, caption, cite, code, dfn, em, strong, th, var {font-style :normal; font-weight:normal}
+
+/* 테이블 스타일 초기화 */
+table {border-collapse:collapse; border-spacing:0}
+
+/* 이미지 및 필드셋에서 보더표시 초기화 */
+fieldset, img {border:0}
+img, input, button, select, textarea { vertical-align:middle}
+
+/* 캡션과 테이블헤더 텍스트 정렬 초기화 */
+caption, th {text-align:left }
+
+/* 인용구 표시 초기화 */
+q:before, q:after {content :''} 
+
+/* hidden_class */
+.hidden {width:0; height:0; margin:0; padding:0; overflow:hidden; line-height:0; font-size:0; visibility:hidden; position:absolute; left:0; top:0}
+
+/* body */ 
+body{font-family:"맑은고딕", Malgun Gothic, "돋움", Dotum, Tahoma; color:#4d4d4d; font-size:13px; line-height:1.5;}
+a:link,a:visited{color:#4d4d4d; text-decoration:none;}
+a:hover,a:active{color:#4e797a; text-decoration:none;}
+
+/* 로그인 */
+.login_title {position:absolute;top:140px;left:300px;width:450px;height:20px;border:1px solid #48BAE4;padding:10px;}
+.login_box {position:absolute;top:200px;left:300px;width:450px;height:300px;border:1px solid #48BAE4;padding:10px;}
+.login_content {top:0px;left:0px;width:1024px;height:768px;border:1px solid #48BAE4;padding:10px;text-align:center;}
+
+.login_in_box {position:absolute;top:530px;left:300px;width:450px;height:50px;border:1px solid #48BAE4;padding:10px;text-align:right;}
+
+/* layout */
+.top_info {left:0px;top:0px;width:1024px;height:30px;border: 1px solid #48BAE4; padding:10px;text-align:right}
+.top_info1 {float:left;left:0px;top:0px;width:400px;height:15px;border: 0px solid #48BAE4; padding:10px;text-align:left}
+.top_info1 span {color:blue;}
+.top_info2 {float:right;left:400px;top:0px;width:524px;height:15px;border: 0px solid #48BAE4; padding:10px;text-align:right}
+.top_info2 span {color:blue;}
+
+.top_menu {left:0px;top:30px;width:1024px;height:30px;border: 1px solid #48BAE4; padding:10px;text-align:center}
+.left_menu {left:0px;top:60px;width:150px;height:710px;border:1px solid #48BAE4; padding:10px;text-align:center}
+.content {position:absolute;left:180px;top:110px;width:843px;height:700px;border: 1px solid #48BAE4; padding:10px;overflow-y:scroll;}
+.footer {left:0px;top:760px;width:1024px;height:40px;border: 1px solid #48BAE4; padding:10px;}
+
+/* 등록 */
+.attend_mng_content {left:0px;top:60px;width:833px;height:700px;border: 1px solid #48BAE4; padding:10px;overflow-y:scroll}
+
+.search_box {left:180px;top:115px;width:830px;height:20px;border: 1px solid #48BAE4; padding:10px;}
+.search_tab {left:180px;top:115px;width:830px;height:20px;border: 1px solid #48BAE4; padding:10px;}
+
+/* layout_popup */
+.popup_layout {left:0px;top:0px;width:900px;height:600px;border: 1px solid #48BAE4; padding:10px;}
+.popup_title {left:0px;top:0px;width:900px;height:30px;border: 1px solid #48BAE4; padding:10px;text-align:center;}
+.popup_content {position:absolute;left:15px;top:35px;width:900px;height:580px;border: 1px solid #48BAE4; padding:10px;text-align:center;overflow-y:scroll;}
+
+/* table 정의 */
+.mytable { border-collapse:collapse;width:100%; }  
+.mytable th {width:150px;border:1px solid #48BAE4; } 
+.mytable td {border:1px solid #48BAE4; }
+
+/* 페이징 */
+.paging {text-align:center}
+
+
+/* google maps */
+#mapCanvas {
+    width: 500px;
+    height: 400px;
+    float: left;
+}
+#infoPanel {
+    float: left;
+    margin-left: 10px;
+}
+#infoPanel div {
+    margin-bottom: 5px;
+}

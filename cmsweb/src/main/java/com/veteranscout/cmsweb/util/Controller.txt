@@ -1,0 +1,183 @@
+    @RequestMapping(value = "/work_schedule/api/response_show",produces = {"application/json", "application/xml"},  consumes = {"application/x-www-form-urlencoded"})
+    @ResponseBody
+    public String response_show(@RequestParam Map<String,Object> body,
+                                @RequestHeader(value="Host") String client_ip) {         
+        String jsonString = common.get_json_string(body.toString());
+        String result = "";            
+        try
+        {     
+
+            JSONObject jsonObject = new JSONObject(jsonString);
+            String error_message = "";
+            String API_KEY = common.get_json_value(jsonObject,"API_KEY");       
+            if (API_KEY=="54697c49-9cac-11e6-9095-001279d65bdf")
+	        {
+                
+            }
+            else
+            {
+                return common.get_error_message("api key error");
+            }
+        }
+        catch(JSONException ex)
+        {
+            result = common.get_error_message(ex.getMessage());            
+        }
+        catch(Exception ex)
+        {
+            result = common.get_error_message(ex.getMessage());            
+        }
+        
+        return result;
+    }
+
+
+     @RequestMapping(value = "/work_show/api/response_show",produces = {"application/json", "application/xml"},  consumes = {"application/x-www-form-urlencoded"})
+    @ResponseBody
+    public String response_show(@RequestParam Map<String,Object> body) {        
+        String jsonString = common.get_json_string(body.toString());
+        String result = "";
+        Connection conn = null;
+		Statement stmt = null;
+        try
+        {     
+
+            JSONObject jsonObject = new JSONObject(jsonString);
+            String error_message = "";
+            String API_KEY = common.get_json_value(jsonObject,"API_KEY");       
+            if (API_KEY=="54697c49-9cac-11e6-9095-001279d65bdf")
+			{
+                try{
+                    Class.forName(common.mysql_driver);
+                    conn = DriverManager.getConnection(common.mysql_db_url,common.mysql_user_name,common.mysql_user_password);
+
+                    System.out.println("\n- MySQL Connection");
+                    stmt = conn.createStatement();
+                    String SHOW_ID = common.get_json_value(jsonObject, "SHOW_ID");
+                    String RES_YN = common.get_json_value(jsonObject, "RES_YN");
+                    String sql;
+                    sql = "CALL SP_WORK_SHOW_RESPONSE_WORK('"+SHOW_ID+"','"+RES_YN+"')"; 
+                    ResultSet rs = stmt.executeQuery(sql);
+                    JSONArray jsonArray = new JSONArray(rs);
+                    JSONArray jsonArray1 = jsonArray.getJSONArray(0);
+                    String jsonResult = jsonArray1.getJSONObject(0).getString("result");
+                    String jsonMessage = jsonArray1.getJSONObject(0).getString("message");
+                    rs.close();
+                    stmt.close();
+                    conn.close();
+
+                    if(jsonResult.equals("error"))
+                    {
+                        return common.get_error_message(jsonMessage);
+                    }
+                    else
+                    {
+                        //var port = common.node_show_alarm_res_port; 
+                        int port = common.node_alarm_server_port;
+                        String host = common.node_alarm_host;
+                        
+                        try (Socket socket = new Socket(host, port)) {
+    
+                            //write to socket using ObjectOutputStream
+                            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+                            oos.writeObject(jsonArray.toString());
+                            oos.close();
+                
+                        } catch (UnknownHostException ex) {
+                
+                            error_message = common.get_error_message("Server not found: " + ex.getMessage());
+                
+                        } catch (IOException ex) {
+                            error_message = common.get_error_message("I/O error: " + ex.getMessage());                
+                        }
+                        
+                        if(error_message.equals(""))
+                        {            
+                            String response = common.get_data(jsonResult, jsonMessage, jsonArray);
+                            return response;
+                        }
+                        else
+                        {
+                            return common.get_error_message(error_message);
+                        }                        
+                    }
+
+                   
+
+                }catch(SQLException se1){
+                    error_message = se1.getMessage();
+                }catch(Exception ex){
+                    error_message = ex.getMessage();
+                }finally{
+                    try{
+                        if(stmt!=null)
+                        {
+                            stmt.close();
+                        }                            
+                    }catch(SQLException se2){
+                        error_message = se2.getMessage();
+                    }
+                    try{
+                        if(conn!=null)
+                        {
+                            conn.close();
+                        }                            
+                    }catch(SQLException se){
+                        error_message = se.getMessage();
+                    }
+                }
+
+                if(!error_message.equals(""))
+                {
+                    return common.get_error_message(error_message);
+                }
+            }
+            else
+            {
+                return common.get_error_message("api key error");
+            }
+        }
+        catch(JSONException ex)
+        {
+            result = common.get_error_message(ex.getMessage());            
+        }
+        catch(Exception ex)
+        {
+            result = common.get_error_message(ex.getMessage());            
+        }
+        
+        return result;
+    }
+
+
+package com.veteranscout.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+import org.json.*;
+import com.veteranscout.api.util.*;
+import java.net.*;
+import java.io.*;
+import java.sql.*;
+import com.mongodb.*;
+
+@RestController
+public class WorkShowController {  
+
+    private String module_name = "work_show";
+    private CommonUtil common = new CommonUtil();
+
+    @RequestMapping(value = "/work_schedule/api/", method = RequestMethod.GET)
+    @ResponseBody
+    public String index() {
+        String result = module_name;
+        return result;
+    }
+}

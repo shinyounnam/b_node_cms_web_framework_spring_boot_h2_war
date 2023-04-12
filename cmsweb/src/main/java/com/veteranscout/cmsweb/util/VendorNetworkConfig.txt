@@ -1,0 +1,230 @@
+package com.veteranscout.vendorapp.network;
+
+public class NetworkConfig {
+    public static String NETWORK_API_KEY = "54697c49-9cac-11e6-9095-001279d65bdf";
+    public static int NETWORK_TIME_OUT = 10000;
+
+    //==================== DOMAIN =====================
+    public static String DOMAIN = "http://api.veteranscout.co.kr/";
+    public static String DOMAIN_IMAGE = "http://images.veteranscout.co.kr";
+    public static String CONTACT_PAGE_URL = "http://vendor.veteranscout.co.kr/attend_mobile";
+    public static String EVENT_URL = "http://auth.platformers.co.kr/event_vendor";
+    public static String WEB_PAY_URL = "http://m.veteranscout.co.kr/pay_info_login_proc.asp";
+
+    public static String VENDOR_ID_FILE_NAME = "vendor_id.txt";
+    public static String VENDOR_PWD_FILE_NAME = "vendor_pwd.txt";
+    public static String VENDOR_FILE_DIR = "user_info_app_info_encrypt";
+
+    // Test Server.
+//    public static String DOMAIN = "http://api1.veteranscout.co.kr/";
+//    public static String DOMAIN_IMAGE = "http://images1.veteranscout.co.kr";
+//    public static String CONTACT_PAGE_URL = "http://vendor2.veteranscout.co.kr/attend_mobile";
+//    public static String EVENT_URL = "http://auth.platformers.co.kr/event_vendor_test";
+
+    //==================== API =========================
+    public static final String API_LOGIN = DOMAIN + "corp_user/api/login";// ok
+    public static final String API_LOGIN_TOKEN = DOMAIN + "corp_user/api/login_mobile_regid";// ok
+    public static final String API_CHANGE_PASSWORD = DOMAIN + "corp_user/api/update_pwd";// ok
+    public static final String API_UPDATE_TT = DOMAIN + "corp_user/api/update_mobile";// ok
+    public static final String API_CORP_INFO = DOMAIN + "corp_user/api/corp_info";// ok
+    public static final String API_CORP_JOB_LIST = DOMAIN + "corp_user/api/corp_job_list";// ok
+    public static final String API_CORP_JOB_LIST_UPDATE = DOMAIN + "corp_user/api/corp_job_list_update";// ok
+    public static final String API_CORP_JOB_LIST_UPDATE_PART = DOMAIN + "corp_user/api/corp_job_list_update_part";// ok
+    // Registration.
+    public static final String API_CHECK_DUPLICATION_ID = DOMAIN + "corp_user/api/id_search";// ok
+    public static final String API_CHECK_COUPON_NUMBER = DOMAIN + "corp_user/api/vip_no_search";// ok
+    public static final String API_REGISTRATION = DOMAIN + "corp_user/api/attend_insert";// ok
+    // Find ID.
+    public static final String API_FIND_ID = DOMAIN + "corp_user/api/id_search_sms";// ok
+    public static final String API_FIND_ID_CERTIFICATION = DOMAIN + "corp_user/api/id_search_sms_confirm";// ok
+    // Find Password.
+    public static final String API_FIND_PASSWORD = DOMAIN + "corp_user/api/pwd_search_sms";// ok
+    public static final String API_FIND_PASSWORD_CERTIFICATION = DOMAIN + "corp_user/api/pwd_search_sms_confirm";// ok
+
+    public static final String API_CORP_USER_INFO = DOMAIN + "corp_user/api/corp_user_info";// ok
+    public static final String API_CORP_JOB_INFO = DOMAIN + "corp_user/api/corp_job_info";// ok
+    public static final String API_CALENDAR_INFO = DOMAIN + "corp_user/api/calendar_info";// ok
+
+    public static final String API_BIZ_INSERT = DOMAIN + "biz_info/api/insert";// ok
+    public static final String API_BIZ_CHECK_BIZ_NUM = DOMAIN + "biz_info/api/check_biz_num";// ok
+    public static final String API_BIZ_INSERT_IMG = DOMAIN_IMAGE + "/files/info_file/api/file/biz_no/insert";
+    public static final String API_BIZ_DETAIL = DOMAIN + "biz_info/api/select_detail";// ok
+    public static final String API_BIZ_DETAIL_SITE = DOMAIN + "biz_info/api/select_detail_site";// ok
+    public static final String API_BIZ_INFO = DOMAIN + "biz_info/api/select_info";// ok
+    public static final String API_BIZ_UPDATE = DOMAIN + "biz_info/api/update";// ok
+    public static final String API_BIZ_LIST = DOMAIN + "biz_info/api/select";// ok
+
+    public static final String API_SITE_DETAIL = DOMAIN + "site_info/api/select_detail";// ok
+    public static final String API_SITE_CHECK_DELETE = DOMAIN + "site_info/api/check_delete";// ok
+    public static final String API_SITE_DELETE = DOMAIN + "site_info/api/delete";// ok
+    public static final String API_SITE_INFO = DOMAIN + "site_info/api/select_info";// ok
+    public static final String API_SITE_LIST = DOMAIN + "site_info/api/select";// ok
+    public static final String API_SITE_INSERT = DOMAIN + "site_info/api/insert";// ok
+    public static final String API_SITE_UPDATE = DOMAIN + "site_info/api/update";// ok
+
+    public static final String API_SCHEDULE_INSERT = DOMAIN + "schedule_info/api/insert";// ok
+    public static final String API_SCHEDULE_INFO = DOMAIN + "schedule_info/api/select_info";// ok
+    public static final String API_SCHEDULE_UPDATE = DOMAIN + "schedule_info/api/update";// ok
+    public static final String API_SCHEDULE_DELETE_ALARM = DOMAIN + "schedule_info/api/delete_alarm";// ok
+    public static final String API_SCHEDULE_VETERAN_CHECK = DOMAIN + "schedule_info/api/check_veteran_service";// ok
+    public static final String API_SCHEDULE_VETERAN_INFO = DOMAIN + "schedule_info/api/req_veteran_service_info";// ok
+    public static final String API_SCHEDULE_VETERAN_REQ = DOMAIN + "schedule_info/api/req_veteran_service";// ok
+
+    public static final String API_SHEDULE_DAY = DOMAIN + "work_schedule/api/schedule_day_list";// ok
+    public static final String API_SCHEDULE_LOAD_LIST_APP = DOMAIN + "work_schedule/api/schedule_load_list_app";// ok
+
+    public static final String API_JOB_DETAIL = DOMAIN + "code_list/api/list";// ok
+
+    public static final String API_JOB_CREATE = DOMAIN + "work_schedule/api/insert_multi";// ok
+    public static final String API_URGENT_CREATE = DOMAIN + "emc_work_schedule/api/insert_multi";// ok
+    public static final String API_JOB_UPDATE = DOMAIN + "work_schedule/api/update_multi";// ok
+    public static final String API_SCHEDULE_DAY_DETAIL_JOB = DOMAIN + "work_schedule/api/emc_load";// ok
+
+    public static final String API_SCHEDULE_DETAIL = DOMAIN + "work_schedule/api/info_detail_app";// ok
+    public static final String API_WORK_NEED_INFO = DOMAIN + "work_need/api/info";// ok
+
+    public static final String API_ARRANGE1 = DOMAIN + "corp_pool/api/request_work_info";// ok
+    public static final String API_ARRANGE2 = DOMAIN + "emc_work_need/api/select_work_info";// ok
+
+    public static final String API_TEMP_INSERT = DOMAIN + "temp_table/api/insert_multi";// ok
+    public static final String API_CHECK_DELETE_SCHEDULE = DOMAIN + "work_schedule/api/delete_check";// ok
+    public static final String API_DELETE_SCHEDULE = DOMAIN + "work_schedule/api/delete";// ok
+    public static final String API_WORKER_CHECKED = DOMAIN + "corp_pool/api/request_work_checks";// ok
+    public static final String API_WORKER_EMP = DOMAIN + "corp_pool/api/request_work_emp_ids";// ok
+
+    public static final String API_DAY_DETAIL_BOOK = DOMAIN + "work_book/api/res_y_info";// ok
+
+    public static final String API_DAY_DETAIL_GBN = DOMAIN + "work_book/api/gbn_info";// ok
+
+    public static final String API_MEMBER_SEARCH = DOMAIN + "corp_pool/api/msg_info";// ok
+    public static final String API_SEND_MSG = DOMAIN + "corp_noti_msg/api/send_msg";// ok
+    public static final String API_SEND_MSG_ALL = DOMAIN + "corp_noti_msg/api/send_msg_all";// ok
+    public static final String API_MEMBER_DETAIL = DOMAIN + "corp_pool/api/emp_detail_info_list";// ok
+    public static final String API_ALARM = DOMAIN + "emp_msg/api/corp_all_alarm_info";// ok
+    public static final String API_ALARM_COUNT = DOMAIN + "emp_msg/api/corp_all_alarm_info_count";// ok
+    public static final String API_ALARM_DETAIL = DOMAIN + "emp_msg/api/corp_all_alarm_info_detail";// ok
+    public static final String API_MESSAGE = DOMAIN + "corp_msg/api/all_msg_page";// ok
+    public static final String API_MESSAGE_RECEIVED = DOMAIN + "corp_msg/api/recv_msg_page";// ok
+    public static final String API_MESSAGE_SEND = DOMAIN + "corp_msg/api/send_msg_page";// ok
+    public static final String API_MESSAGE_INFO = DOMAIN + "corp_msg/api/recv_msg_info";// ok
+    public static final String API_MESSAGE_SEND_INFO = DOMAIN + "corp_msg/api/send_msg_info";// ok
+    public static final String API_MESSAGE_DELETE = DOMAIN + "corp_msg/api/recv_msg_delete";// ok
+    public static final String API_MESSAGE_SEND_DELETE = DOMAIN + "corp_msg/api/send_msg_delete";// ok
+    public static final String API_MY_STORE = DOMAIN + "corp_item_use/api/use_list";// ok
+    public static final String API_MESSAGE_INFO_DETAIL = DOMAIN + "corp_msg/api/recv_msg_info_detail";// ok
+
+    public static final String API_PUSH_INFO = DOMAIN + "corp_conf_noti/api/info_alarm_conf";// ok
+    public static final String API_PUSH_INFO_UPDATE = DOMAIN + "corp_conf_noti/api/insert_alarm_conf";// ok
+
+    public static final String API_CHECK_WORK = DOMAIN + "work_book/api/check_work";// ok
+    public static final String API_CHECK_WORK_CANCEL = DOMAIN + "work_book/api/check_work_cancel";// ok
+    public static final String API_CHECK_URGENT_WORK = DOMAIN + "emc_work_schedule/api/check_response";// ok
+    public static final String API_SCHEDULE_LOAD_LIST = DOMAIN + "work_schedule/api/schedule_load_list";// ok
+    public static final String API_LOGOUT = DOMAIN + "corp_user/api/logout";// ok
+
+    public static final String CHECK_WORK_FREE = DOMAIN + "emc_work_schedule/api/check_work";// ok
+    public static final String CHECK_WORK_ITEM = DOMAIN + "emc_work_schedule/api/check_work_alarm";// ok
+
+    public static final String SELECT_WORK_EMP_IDS = DOMAIN + "emc_work_need/api/select_work_emp_ids";// ok
+    public static final String API_PAYMENT_BETA = DOMAIN + "item_code/api/corp_item_add";// ok
+
+    public static final String API_CHECK_BOOK = DOMAIN + "work_book/api/check_book";// ok
+    public static final String API_CHECK_EDIT = DOMAIN + "work_schedule/api/update_check";// ok
+
+    public static final String DELETE_WORK_NEED = DOMAIN + "work_need/api/delete";// ok
+    public static final String API_SESSION_CHECK = DOMAIN + "corp_user/api/session_check";// ok
+    public static final String API_DELETE_MULTI_ALARM = DOMAIN + "corp_msg/api/alarm_delete_multi";// ok
+    public static final String API_DELETE_MULTI_ALARM_ALL = DOMAIN + "corp_msg/api/alarm_delete_multi_all";// ok
+    public static final String API_DELETE_MULTI_MESSAGE = DOMAIN + "corp_msg/api/delete_multi";// ok
+    public static final String API_ALL_GBN_INFO = DOMAIN + "work_book/api/all_gbn_info";// ok
+
+    public static final String API_EMC_HISTORY = DOMAIN + "work_book/api/all_gbn_info";// ok
+
+    public static final String API_SIMPLE_REGISTRATION = DOMAIN + "schedule_info/api/insert_schedule";// ok
+    public static final String API_ARRANGE3 = DOMAIN + "schedule_info/api/arrange_list";// ok
+    public static final String API_ADD_EMP_IDS = DOMAIN + "schedule_info/api/temp_add_emp_ids";// ok
+    public static final String API_ARRANGE3_CANCEL_LIST = DOMAIN + "schedule_info/api/can_book_list";// ok
+    public static final String API_ARRANGE3_CANCEL = DOMAIN + "schedule_info/api/can_book";// ok
+
+    public static final String API_EASY_LOGIN = DOMAIN + "corp_user/api/login_link_regid";// ok
+
+    public static final String API_SIMPLE_REGISTRATION_SCHEDULE_REQUEST = DOMAIN + "schedule_info/api/insert_schedule_req";// ok
+    public static final String API_SIMPLE_REGISTRATION_SCHEDULE_UPDATE = DOMAIN + "schedule_info/api/update_site_id";// ok
+    public static final String API_SIMPLE_REGISTRATION_SCHEDULE_INSERT = DOMAIN + "schedule_info/api/insert_site_id";// ok
+    public static final String API_SIMPLE_REGISTRATION_SCHEDULE_REQUEST_MULTI = DOMAIN + "schedule_info/api/req_veteran_service_work";// ok
+    public static final String API_SIMPLE_REGISTRATION_SCHEDULE_DELETE = DOMAIN + "schedule_info/api/insert_schedule_req_delete";// ok
+
+    public static final String API_MAIN_TODAY_AND_TOMORROW = DOMAIN + "corp_user/api/today_tomorrow_emp_ids";// ok
+
+    public static final String API_SCHEDULE_LIST = DOMAIN + "corp_user/api/schedule_list";// ok
+
+    public static final String API_SCHEDULE_DETAIL_INSERT_JOB_TYPE = DOMAIN + "schedule_info/api/insert_job";// ok
+    public static final String API_SCHEDULE_DETAIL_UPDATE_JOB_TYPE = DOMAIN + "schedule_info/api/update_job";// ok
+    public static final String API_SCHEDULE_DETAIL_DELETE_JOB_TYPE = DOMAIN + "schedule_info/api/delete_job";// ok
+    public static final String API_SCHEDULE_DETAIL_DELETE_CHECK_JOB_TYPE = DOMAIN + "schedule_info/api/delete_check_job";// ok
+    public static final String API_SCHEDULE_DETAIL_SELECT_JOB_TYPE = DOMAIN + "schedule_info/api/select_job";// ok
+    public static final String API_EMERGENCY_REQUEST_LIST = DOMAIN + "schedule_info/api/corp_veteran_service_need_ids_info";// ok
+    public static final String API_EMERGENCY_REQUEST_LIST_INSERT = DOMAIN + "schedule_info/api/corp_veteran_service_need_ids_insert";// ok
+    public static final String API_SCHEDULE_ARRANGE_LIST = DOMAIN + "work_book/api/site_arrange_info";// ok
+    public static final String API_SCHEDULE_ARRANGE_JOB_LIST = DOMAIN + "work_book/api/site_arrange_job_info";// ok
+    public static final String API_SCHEDULE_ARRANGE_TOTAL_LIST = DOMAIN + "work_book/api/site_arrange_total_info";// ok
+
+    public static final String API_BOARD_LIST = DOMAIN + "emc_work_schedule/api/cms_board_list";// ok
+    public static final String API_BOARD_INFO = DOMAIN + "emc_work_schedule/api/cms_board_info";// ok
+    public static final String API_FAQ_LIST = DOMAIN + "emc_work_schedule/api/cms_faq_page";// ok
+    public static final String API_ONLINE_REQ_INSERT = DOMAIN + "emc_work_schedule/api/cms_online_req_insert";// ok
+    public static final String API_UPDATE_ADD_INFO = DOMAIN + "corp_user/api/update_add_info";// ok
+    public static final String API_CORP_INSERT_IMG = DOMAIN_IMAGE + "/images/corp_img/logo/api/file/upload";
+    public static final String API_CORP_DELETE_IMG = DOMAIN_IMAGE + "/images/corp_img/logo/api/file/delete";
+    public static final String API_CORP_UPDATE_MOBILE = DOMAIN + "corp_user/api/update_mobile";// ok
+    public static final String API_CHECK_BIZ_NO = DOMAIN + "corp_user/api/check_biz_no";// ok
+    public static final String API_ALARM_STATUS_HEAD = DOMAIN + "emp_msg/api/corp_all_alarm_info_status_head";// ok
+    public static final String API_ALARM_MSG = DOMAIN + "emp_msg/api/corp_alarm_msg";// ok
+    public static final String API_ALARM_STATUS = DOMAIN + "emp_msg/api/corp_all_alarm_info_status";// ok
+    public static final String API_ALARM_STATUS_DETAIL = DOMAIN + "emp_msg/api/corp_all_alarm_info_status_detail";// ok
+    public static final String API_ALARM_READ_UPDATE = DOMAIN + "emp_msg/api/corp_all_alarm_info_read_update";// ok
+
+    public static final String API_EMP_SEARCH = DOMAIN + "corp_user/api/corp_emp_condition_search";// ok
+    public static final String API_CORP_AT_EMP_SEARCH = DOMAIN + "corp_user/api/corp_at_emp_list";// ok
+    public static final String API_EMP_CONDITION_LIST = DOMAIN + "corp_user/api/corp_emp_condition_list";// ok
+    public static final String API_EMP_CONDITION_INSERT = DOMAIN + "corp_user/api/corp_emp_condition_insert";// ok
+    public static final String API_EMP_CONDITION_DELETE = DOMAIN + "corp_user/api/corp_emp_condition_delete";// ok
+    public static final String API_JOB_TYPE_CODE = DOMAIN + "emc_work_schedule/api/job_type_code2";// ok
+    public static final String API_CORP_JOB_TYPE_CODE = DOMAIN + "emc_work_schedule/api/corp_job_type_code2";// ok
+    public static final String API_GET_REGION1 = DOMAIN + "emc_work_schedule/api/area_code1";// ok
+    public static final String API_GET_REGION2 = DOMAIN + "emc_work_schedule/api/area_code2";// ok
+    public static final String API_EMP_DETAIL_INFO = DOMAIN + "corp_pool/api/emp_detail_info_list";// ok
+    public static final String API_EMP_BLACK_YN = DOMAIN + "emp_user/api/update_black_yn";// ok
+    public static final String API_EMP_WORK_INFO = DOMAIN + "corp_pool/api/emp_work_list";// ok
+    public static final String API_EMP_JOB_INFO = DOMAIN + "emp_user_select/api/job_info_list";// ok
+    public static final String API_CORP_AT_EMP_TRANS = DOMAIN + "corp_user/api/corp_at_emp_trans";// ok
+    public static final String API_VETERAN_LIST = DOMAIN + "corp_pool/api/msg_info";// ok
+    public static final String API_INSERT_ALARM = DOMAIN + "schedule_info/api/alarm_insert";// ok
+
+    // 긴급 요청
+    public static final String API_SELECTED_JOB_INSERT = DOMAIN + "schedule_info/api/corp_veteran_service_need_ids_insert";// ok
+    public static final String API_EMERGENCY_REQUEST = DOMAIN + "schedule_info/api/veteran_service_req_need_ids";// ok
+    public static final String API_CHECK_ITEM_NUMBER = DOMAIN + "emc_work_schedule/api/corp_item_check";// ok
+    // 긴급요청 완료 알리미 개수.
+    public static final String API_URGENT_REQUEST_REMAIN_NUMBER = DOMAIN + "emc_work_schedule/api/corp_item_count";// ok
+    // PC 가입자 예약완료, 근무불가 처리하기.
+    public static final String API_PC_MEMBER_RESERVED = DOMAIN + "corp_pool/api/request_book_work_emp_ids";// ok
+    public static final String API_PC_MEMBER_DISABLED = DOMAIN + "corp_pool/api/request_cancel_work_emp_ids";// ok
+    public static final String API_PC_MEMBER_REJECT = DOMAIN + "corp_pool/api/request_reject_work_emp_ids";// ok
+    // 예약 취소 보내기.
+    public static final String API_REQUEST_CANCEL_RESERVED = DOMAIN + "corp_pool/api/request_cancel_book_work_emp_ids";// ok
+    // 인재 검색 선호 직종 추가.
+    public static final String API_SEARCH_GET_FAVORITE_JOB = DOMAIN + "emc_work_schedule/api/job_type_code2_all_list";// ok
+    public static final String API_SEARCH_ADD_FAVORITE_JOB = DOMAIN + "corp_user/api/corp_emp_condition_insert_multi";// ok
+    // 내 정보 관리 직종 정보 수정.
+    public static final String API_INFORMATION_GET_JOB = DOMAIN + "emc_work_schedule/api/corp_job_type_code2_all_list";// ok
+    public static final String API_INFORMATION_EDIT_JOB = DOMAIN + "corp_user/api/corp_job_list_update_part_multi";// ok
+    // 아이템 구매. (구글 인앱 결제)
+    public static final String API_PURCHASE_ITEM = DOMAIN + "emc_work_schedule/api/item_income_pay";// ok
+    // 아이템 구매 목록.
+    public static final String API_PURCHASE_ITEM_LIST = DOMAIN + "emc_work_schedule/api/item_buy_list";// ok
+    // 쿠폰 번호 등록.
+    public static final String API_REGISTER_COUPON = DOMAIN + "emc_work_schedule/api/item_income_coupon";// ok
+    // 이벤트 활성화.
+    public static final String API_EVENT_ENABLE = DOMAIN + "corp_user/api/event_enable";// ok
+}
